@@ -1,47 +1,103 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from "axios";
+import toastr from 'toastr';
+
+import './../styles/Login.css';
+
+import Logo from './../assets/images/logo.png';
+import Facebook from './../assets/images/facebook.png';
+import Google from './../assets/images/google.png';
 
 function Login() {
   // Definimos estados para el nombre de usuario y la contraseña
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      navigate("/home");
+    }
+  }, [navigate]);
 
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    axios.post('http://127.0.0.1:5000/solicitante/login', {
+      correo: email,
+      contrasena: password
+    }).then((response) => {
+      toastr.success(`Bienvenido!`);
+      localStorage.setItem('user', JSON.stringify(response.data));
+      navigate("/home");
+    }).catch((err) => {
+      toastr.error(err.response.data.error);
+    });
   };
 
   return (
     <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <h2>Iniciar Sesión</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="username" className="form-label">Nombre de Usuario</label>
-              <input
-                type="text"
-                className="form-control"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
+      <section className="vh-100">
+        <div className="bg-white">
+          <div className="card-body p-5 text-center">
+            <div className="mb-md-5 mt-md-4 pb-5">
+
+              <div className="logo">
+                <img src={Logo} alt='' className="rounded mx-auto d-block" />
+              </div>
+
+              <h3 className="fw-bold mb-2 text-uppercase mt-5">Iniciar sesion</h3>
+
+              <div className="form-outline form-white mb-4 mt-5">
+                <input 
+                  type="email" 
+                  placeholder="Correo electronico" 
+                  id="correo" 
+                  className="form-control form-control-lg" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required 
+                />
+              </div>
+
+              <div className="form-outline form-white mb-4">
+                <input 
+                  type="password" 
+                  placeholder="Contraseña" 
+                  id="contrasena" 
+                  className="form-control form-control-lg" 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required 
+                />
+              </div>
+
+              <button className="btn btn-outline-primary btn-lg px-5 mt-3" onClick={handleSubmit} type="submit">Ingresar</button>
+
+              <div className="d-flex justify-content-center text-center mt-5 pt-1">
+                <a href="https://www.facebook.com/" className="text-dark">
+                  <div className="icon">
+                    <img src={Facebook} alt="" />
+                  </div>
+                </a>
+                <a href="https://www.google.com/intl/es-419/gmail/about/" className="text-dark">
+                  <div className="icon">
+                    <img src={Google} alt="" />
+                  </div>
+                </a>
+              </div>
+
             </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">Contraseña</label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+
+            <div>
+              ¿No tienes una cuenta? <Link to={"/register"} className="text-info-50 fw-bold">Registrate aqui!</Link>
             </div>
-            <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
-          </form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

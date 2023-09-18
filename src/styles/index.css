@@ -1,1 +1,21 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+#toast-container > .toast-success {
+    background-color:#62AA44;
+    opacity: 1;
+}
+
+#toast-container >.toast-error {
+    background-color:#F44336;
+    opacity: 1;
+}
+
+#toast-container >.toast-info {
+    background-color:#2196F3;
+    opacity: 1;
+}
+
+#toast-container >.toast-warning {
+    background-color:#FFC107;
+    opacity: 1;
+}
