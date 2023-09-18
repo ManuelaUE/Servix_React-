@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import toastr from 'toastr';
 
-import './../styles/Login.css';
-
-import Logo from './../assets/images/logo.png';
 import Facebook from './../assets/images/facebook.png';
 import Google from './../assets/images/google.png';
+import Logo from './../assets/images/logo.png';
 
 function Login() {
   // Definimos estados para el nombre de usuario y la contraseña
@@ -25,6 +23,14 @@ function Login() {
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if(email === '') {
+      return toastr.warning('El correo es requerido');
+    }
+
+    if(password === '') {
+      return toastr.warning('La contraseña es requerida');
+    }
 
     axios.post('http://127.0.0.1:5000/solicitante/login', {
       correo: email,

@@ -1,0 +1,29 @@
+.navbar-brand {
+  width: 15%;
+}
+
+.navbar-brand img {
+  width: 100%;
+}
+
+.items-submenu {
+  width: 20%;
+  font-size: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.navbar {
+  -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);
+}
+
+.bottomnavbar {
+  top: 90%;
+  position: absolute;
+  height: 10vh;
+}
