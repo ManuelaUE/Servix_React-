@@ -142,7 +142,7 @@ function Register() {
                         </div>
 
                         <div>
-                            ¿Ya tienes una cuenta? <Link href="/" className="text-info-50 fw-bold">Inicia sesion!</Link>
+                            ¿Ya tienes una cuenta? <Link to={"/login"} className="text-info-50 fw-bold">Inicia sesion!</Link>
                         </div>
                     </div>
                 </div>
