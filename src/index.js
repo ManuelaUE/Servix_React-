@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import 'toastr/build/toastr.min.css';
-import './styles/index.css';
+import './styles/components/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
