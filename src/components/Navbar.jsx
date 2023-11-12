@@ -15,7 +15,7 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <div className="container-fluid">
                 <Link className="navbar-brand" to={"/home"}>
-                    <img src={Logo} alt="" />
+                    <img src={Logo} alt=""/>
                 </Link>
             
                 <button className="navbar-toggler" type="button" onClick={openNavBar}>
@@ -37,7 +37,7 @@ function Navbar() {
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link" to={"/logout"}>Cerrar sesion</Link>
+                            <Link className="nav-link" to={"/login"}>Cerrar sesion</Link>
                         </li>
                     </ul>
                 </div>
