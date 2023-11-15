@@ -16,7 +16,7 @@ function App () {
 
                 <Route path="/home" element={<Home />} />
 
-                <Route path="/" element={<Navigate to="/home" />} />
+                <Route index element={<Navigate to = "/login" />} />
             </Routes>
         </Router>
     );

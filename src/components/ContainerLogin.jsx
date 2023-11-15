@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ContainerLonig({image, title}) {
+export default function ContainerLonig({image, title, children}) {
   return (
     <div className="container">
       <section className="vh-100">
@@ -9,6 +9,7 @@ export default function ContainerLonig({image, title}) {
             <div className="mb-md-5 mt-md-4 pb-5">
               <div className="logo">
                 <img src={image} alt="" className="rounded mx-auto d-block" />
+                {children}
               </div>
               <h3 className="fw-bold mb-2 text-uppercase mt-5">{title}</h3>
             </div>
