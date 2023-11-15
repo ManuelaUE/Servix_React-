@@ -53,8 +53,7 @@ function Login() {
   return (
     <ContainerLogin
     image= {Logo}
-    title="Iniciar Sesion"
-    >
+    title="Iniciar Sesion">
    
       <div className="form-outline form-white mb-4 mt-5">
         <input
