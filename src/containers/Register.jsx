@@ -68,7 +68,7 @@ function Register() {
     <>
       <ContainerRegister 
       image={Logo} 
-      title="Registre"
+      title="Registro"
       >
 
         <form>
