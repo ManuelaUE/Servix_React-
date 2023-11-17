@@ -3,27 +3,31 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-import SolicitantteForm from "../components/SolicitanteForm";
+import SolicitanteForm from "../components/SolicitanteForm";
 
-import ContainerProfileSolicitante from "../components/ContainerProfileSolicitante";
+import ContainerSolicitante from "../components/ContainerSolicitante";
 
-function Perfil() {
+function PerfilSolicitante() {
   return (
     <>
       <Navbar />
-      <ContainerProfileSolicitante 
+      <ContainerSolicitante 
       title="Mi Perfil"
       >
-        <SolicitantteForm title="Nombre" save="Guardar">
+        <SolicitanteForm 
+        title="Nombre" 
+        save="Guardar"
+        text="Hacerme Ofertante"
+        >
           <input
             class="form-control"
             type="text"
             name="name"
             placeholder="nombre"
           ></input>
-        </SolicitantteForm>
+        </SolicitanteForm>
 
-        <SolicitantteForm 
+        <SolicitanteForm 
         title="Apellido"
         >
           <input
@@ -32,9 +36,9 @@ function Perfil() {
             name="lastName"
             placeholder="Apellido"
           ></input>
-        </SolicitantteForm>
+        </SolicitanteForm>
 
-        <SolicitantteForm 
+        <SolicitanteForm 
         title="Correo electronico"
         >
           <input
@@ -43,9 +47,9 @@ function Perfil() {
             name="email"
             placeholder="Correo electronico"
           ></input>
-        </SolicitantteForm>
+        </SolicitanteForm>
 
-        <SolicitantteForm 
+        <SolicitanteForm 
         title="Telefono celular"
         >
           <input
@@ -54,13 +58,13 @@ function Perfil() {
             name="phone"
             placeholder="xxx-xxx-xxxx"
           ></input>
-        </SolicitantteForm>
+        </SolicitanteForm>
         
-      </ContainerProfileSolicitante>
+      </ContainerSolicitante>
 
       <Footer />
     </>
   );
 }
 
-export default Perfil;
+export default PerfilSolicitante;
