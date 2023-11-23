@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Card({ image, text, titleLink, title, link }) {
+export default function CardHome({ image, text, titleLink, title, link }) {
   return (
     <div className="card mt-3">
       <img src={image} className="card-img-top" alt="..." />

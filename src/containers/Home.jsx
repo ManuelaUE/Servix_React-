@@ -6,14 +6,14 @@ import Navbar from "../components/Navbar";
 import Carpintero from "./../assets/images/carpintero.jpg";
 import Constructor from "./../assets/images/constructor.png";
 import ContainerHome from "../components/ContainerHome";
-import Card from "../components/Card";
+import CardHome from "../components/CardHome";
 
 function Home() {
   return (
     <>
       <Navbar />
       <ContainerHome>
-        <Card
+        <CardHome
           title="Carpintero"
           image={Carpintero}
           link={"#"}
@@ -24,7 +24,7 @@ function Home() {
           titleLink="Ver más"
         />
 
-        <Card
+        <CardHome
           title="Constructor"
           image={Constructor}
           link={"#"}
