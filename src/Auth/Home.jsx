@@ -5,8 +5,8 @@ import Navbar from "../components/Navbar";
 
 import Carpintero from "./../assets/images/carpintero.jpg";
 import Constructor from "./../assets/images/constructor.png";
-import ContainerHome from "../components/ContainerHome";
-import CardHome from "../components/CardHome";
+import ContainerHome from "../container/ContainerHome";
+import CardHome from "../card/CardHome";
 
 function Home() {
   return (

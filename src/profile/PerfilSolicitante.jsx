@@ -3,7 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-import SolicitanteForm from "../components/SolicitanteForm";
+import SolicitanteForm from "../form/SolicitanteForm";
 
 import ContainerSolicitante from "../components/ContainerSolicitante";
 

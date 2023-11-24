@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 import ContainerSubCategoria from "../components/ContainerSubCategoria";
-import CardSubcategoria from "../components/CardSubcategoria";
+import CardSubcategoria from "../card/CardSubcategoria";
 
 import Constructor from "./../assets/images/constructor.png";
 import Cerrajero from "./../assets/images/cerrajero.png";

@@ -7,8 +7,7 @@ import Facebook from "./../assets/images/facebook.png";
 import Google from "./../assets/images/google.png";
 import Logo from "./../assets/images/logo.png";
 
-import ContainerLogin from "../components/ContainerLogin";
-// import FormLogin from "../components/FormLogin";
+import ContainerLogin from "../container/ContainerLogin";
 
 function Login() {
   // Definimos estados para el nombre de usuario y la contraseña

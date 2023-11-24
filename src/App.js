@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
 
-import Login from './containers/Login';
-import Register from './containers/Register';
+import Login from './Auth/Login';
+import Register from './Auth/Register';
 
-import Home from './containers/Home';
+import Home from './Auth/Home';
 
 function App () {
     return (
