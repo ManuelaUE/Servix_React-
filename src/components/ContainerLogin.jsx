@@ -9,9 +9,9 @@ export default function ContainerLonig({image, title, children}) {
             <div className="mb-md-5 mt-md-4 pb-5">
               <div className="logo">
                 <img src={image} alt="" className="rounded mx-auto d-block" />
+                <h3 className="fw-bold mb-2 text-uppercase mt-5">{title}</h3>
                 {children}
               </div>
-              <h3 className="fw-bold mb-2 text-uppercase mt-5">{title}</h3>
             </div>
           </div>
         </div>

@@ -9,9 +9,9 @@ export default function ContainerRegister({ image, title, children }) {
             <div className="mb-md-5 mt-md-4 pb-5"></div>
             <div className="logo">
               <img src={image} className="rounded mx-auto d-block" alt="" />
+              <h2 className="fw-bold mb-2 text-uppercase mt-3">{title}</h2>
             {children}
             </div>
-            <h2 className="fw-bold mb-2 text-uppercase mt-3">{title}</h2>
           </div>
         </div>
       </section>

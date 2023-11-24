@@ -135,7 +135,7 @@ function Register() {
         </form>
 
         <button
-          className="btn btn-outline-primary btn-lg px-5 mt-2"
+          className="btn btn-outline-primary btn-lg px-5 mt-2 position-center"
           onClick={handleSubmit}
           type="submit"
         >
