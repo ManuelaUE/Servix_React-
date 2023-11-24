@@ -3,8 +3,8 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-import ContainerServicios from "../components/ContainerServicios";
-import CardServices from "../components/CardServices";
+import ContainerServicios from "../container/ContainerServicios";
+import CardServices from "../card/CardServices";
 
 import Martillo from "./../assets/images/martillo.png";
 import Tecnico from "./../assets/images/apoyo-tecnico.png";

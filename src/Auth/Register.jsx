@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toastr from "toastr";
-import ContainerRegister from "../components/ContainerRegister";
+import ContainerRegister from "../container/ContainerRegister";
 
 import Logo from "./../assets/images/logo.png";
 
