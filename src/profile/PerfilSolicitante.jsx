@@ -20,7 +20,7 @@ function PerfilSolicitante() {
         text="Hacerme Ofertante"
         >
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="name"
             placeholder="nombre"
@@ -31,7 +31,7 @@ function PerfilSolicitante() {
         title="Apellido"
         >
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="lastName"
             placeholder="Apellido"
@@ -42,7 +42,7 @@ function PerfilSolicitante() {
         title="Correo electronico"
         >
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="email"
             placeholder="Correo electronico"
@@ -53,7 +53,7 @@ function PerfilSolicitante() {
         title="Telefono celular"
         >
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="phone"
             placeholder="xxx-xxx-xxxx"

@@ -5,6 +5,7 @@ import Login from './Auth/Login';
 import Register from './Auth/Register';
 
 import Home from './Auth/Home';
+import Profile from './profile/PerfilOfertante';
 
 function App () {
     return (
@@ -13,7 +14,7 @@ function App () {
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-
+                <Route path="/profile" element={<Profile />} />
                 <Route path="/home" element={<Home />} />
 
                 <Route index element={<Navigate to = "/login" />} />

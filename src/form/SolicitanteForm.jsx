@@ -3,16 +3,16 @@ import React from "react";
 export default function SolicitantteForm({ title, children, save, text }) {
   return (
     <form>
-      <div class="form-group mb-3">
-        <label class="col-sm-2 control-label">{title}</label>
-        <div class="col-sm-4"></div>
+      <div className="form-group mb-3">
+        <label className="col-sm-2 control-label">{title}</label>
+        <div className="col-sm-4"></div>
         {children}
 
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-primary">{save}</button>
-            <div class="mt-5" id="makeMeOffer">
-              <button class="btn btn-secondary" onclick="changeRol()">
+        <div className="form-group">
+          <div className="col-sm-offset-2 col-sm-10">
+            <button className="btn btn-primary">{save}</button>
+            <div className="mt-5" id="makeMeOffer">
+              <button className="btn btn-secondary" onclick="changeRol()">
                 {text}
               </button>
             </div>
