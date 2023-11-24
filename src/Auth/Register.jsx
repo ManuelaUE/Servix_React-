@@ -2,8 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toastr from "toastr";
-import ContainerRegister from "../container/ContainerRegister";
-
+import ContainerAuth from "../container/ContainerAuth";
 import Logo from "./../assets/images/logo.png";
 
 function Register() {
@@ -66,13 +65,13 @@ function Register() {
 
   return (
     <>
-      <ContainerRegister 
+      <ContainerAuth 
       image={Logo} 
       title="Registro"
       >
 
         <form>
-          <div className="form-outline form-white mt-3">
+          <div className="form-outline form-white mt-3 mb-4">
             <input
               type="text"
               placeholder="Nombre"
@@ -84,7 +83,7 @@ function Register() {
             />
           </div>
 
-          <div className="form-outline form-white mt-2">
+          <div className="form-outline form-white mb-4">
             <input
               type="text"
               placeholder="Apellido"
@@ -96,7 +95,7 @@ function Register() {
             />
           </div>
 
-          <div className="form-outline form-white mt-2">
+          <div className="form-outline form-white mb-4">
             <input
               type="number"
               placeholder="Telefono celular"
@@ -109,7 +108,7 @@ function Register() {
             />
           </div>
 
-          <div className="form-outline form-white mt-2">
+          <div className="form-outline form-white mb-4">
             <input
               type="email"
               placeholder="Correo electronico"
@@ -121,7 +120,7 @@ function Register() {
             />
           </div>
 
-          <div className="form-outline form-white mt-2">
+          <div className="form-outline form-white mb-4">
             <input
               type="password"
               placeholder="Contraseña"
@@ -135,20 +134,20 @@ function Register() {
         </form>
 
         <button
-          className="btn btn-outline-primary btn-lg px-5 mt-2 position-center"
+          className="btn btn-outline-primary btn-lg px-5 mb-4 position-center"
           onClick={handleSubmit}
           type="submit"
         >
           Registrar
         </button>
 
-        <div>
+        <div className="mt-5">
           ¿Ya tienes una cuenta?{" "}
           <Link to={"/login"} className="text-info-50 fw-bold">
             Inicia sesion!
           </Link>
         </div>
-      </ContainerRegister>
+      </ContainerAuth>
     </>
   );
 }

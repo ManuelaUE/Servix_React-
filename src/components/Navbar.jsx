@@ -1,14 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Logo from './../assets/images/logo.png';
 
 import './../styles/components/navbar.css';
 
 function Navbar() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        validateSession();
+    }, []);
 
     const openNavBar = () => {
         document.getElementById("navbarSupportedContent").classList.toggle('show');
+    }
+
+    const closeSession = () => {
+        localStorage.removeItem("user");
+    }
+
+    const validateSession = () => {
+        const user = localStorage.getItem("user");
+
+        if(!user) {
+            navigate("/login");
+        }
     }
 
     return (
@@ -37,7 +54,7 @@ function Navbar() {
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link" to={"/login"}>Cerrar sesion</Link>
+                            <Link className="nav-link" onClick={closeSession} to={"/login"}>Cerrar sesion</Link>
                         </li>
                     </ul>
                 </div>
