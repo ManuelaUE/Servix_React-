@@ -4,7 +4,7 @@ import React from "react";
 export default function CardServices ({ title, image, link }){
     return(
       <a href={link}>
-      <div className="card mt-3" style="width: 12rem;">
+      <div className="card mt-3">
           <img src={image} className="card-img-top" alt="..."></img>
           <div className="card-img-overlay">
               <div className="d-flex align-content-center align-items-center justify-content-center">
