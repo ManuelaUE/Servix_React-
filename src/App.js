@@ -6,7 +6,7 @@ import Register from './Auth/Register';
 import Servicios from './services/Servicios';
 
 import Home from './Auth/Home';
-import Profile from './profile/PerfilOfertante';
+import Profile from './profile/PerfilSolicitante';
 
 function App () {
     return (
