@@ -11,9 +11,6 @@ export default function CardHome({ image, text, titleLink, title, link }) {
         <p className="card-text">
             {text}
         </p>
-        <Link to={link} className="btn btn-primary">
-          {titleLink}
-        </Link>
       </div>
     </div>
   );

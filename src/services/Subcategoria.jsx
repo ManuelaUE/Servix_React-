@@ -1,9 +1,9 @@
-import React from "from";
+import React from "react";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-import ContainerSubCategoria from "../components/ContainerSubCategoria";
+import ContainerSubCategoria from "./../container/ContainerSubCategoria";
 import CardSubcategoria from "../card/CardSubcategoria";
 
 import Constructor from "./../assets/images/constructor.png";
@@ -95,4 +95,4 @@ function Subcategoria() {
   );
 }
 
-export default Subcategoria();
+export default Subcategoria;

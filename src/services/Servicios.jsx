@@ -19,19 +19,19 @@ function Servicios(){
         title="Categorias"
         >
           <CardServices
-          link={"/subcategorias.html?categoria=obrasyreformasdehogar"}
+          link={"/subcategorias?categoria=obrasyreformasdehogar"}
           image={Martillo}
           title="Obras y reformas de hogar"
           />
 
           <CardServices
-          link={"/subcategorias.html?categoria=redelectrica"}
+          link={"/subcategorias?categoria=redelectrica"}
           image={Electricidad}
           title="Servicios tecnicos"
           />
           
           <CardServices
-          link={"/subcategorias.html?categoria=serviciostecnicos"}
+          link={"/subcategorias?categoria=serviciostecnicos"}
           image={Tecnico}
           title="Red Electrica"
           />

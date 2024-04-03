@@ -3,11 +3,11 @@ import React from "react";
 
 export default function CardSubcategoria({ title, image, id }) {
   return (
-    <div id={id} style="display: none;">
+    <div id={id} style={{"display": "block"}}>
       <div
         className="card mt-3"
-        style="width: 12rem;"
-        onclick="mostrarVendedores()">
+        style={{"width": "12rem"}}
+>
         <img
           src={image}
           className="card-img-top"

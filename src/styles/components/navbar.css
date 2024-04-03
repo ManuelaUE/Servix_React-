@@ -28,3 +28,24 @@
   position: absolute;
   height: 10vh;
 }
+
+.search {
+  width: 75%;
+  max-height: 300px;
+  position: absolute;
+  top: 80px;
+  left: 11%;
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listaBusqueda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

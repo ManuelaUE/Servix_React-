@@ -1,6 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaSearch, FaTimes } from 'react-icons/fa';
+import axios from "axios";
+import toastr from "toastr";
+import Rating  from './../components/Rating';
 
 import Logo from './../assets/images/logo.png';
 
@@ -9,6 +13,9 @@ import { googleLogout } from '@react-oauth/google';
 
 function Navbar() {
     const navigate = useNavigate();
+    const [isSearching, setIsSearching] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [busqueda, setBusqueda] = useState([]);
 
     useEffect(() => {
         validateSession();
@@ -43,13 +50,71 @@ function Navbar() {
         }
     }
 
+    const handleSearchClick = () => {
+        setIsSearching(true);
+    };
+    
+    const handleClearClick = () => {
+        setSearchTerm('');
+        setIsSearching(false);
+    };
+    
+    const handleInputChange = (event) => {
+        setSearchTerm(event.target.value);
+
+        axios.post('http://127.0.0.1:5000/buscar/ofertante', {
+            buscar: searchTerm
+        })
+        .then((response) => {
+            setBusqueda(response.data);
+        })
+        .catch((error) => {
+            toastr.warning('Error al realizar la petición:', error);
+        });
+    };
+
+    const goToProfile = (id)  => {
+        window.location.href="/ofertante?id=" + id;
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <div className="container-fluid">
                 <Link className="navbar-brand" to={"/home"}>
                     <img src={Logo} alt=""/>
                 </Link>
-            
+
+                {isSearching ? (
+                    <form>
+                        <input
+                            type="text"
+                            value={searchTerm}
+                            onChange={handleInputChange}
+                            placeholder="Buscar..."
+                            className="navbar-toggler"
+                        />
+                        <button type="button" onClick={handleClearClick} className="navbar-toggler">
+                            <FaTimes />
+                        </button>
+                    </form>
+                ) : (
+                    <button onClick={handleSearchClick} className="navbar-toggler">
+                        <FaSearch />
+                    </button>
+                )}
+
+                {busqueda.length > 0 && 
+                    <div className="search">
+                        {busqueda.map((resultado, index) => (
+                            <div key={index} className='listaBusqueda' onClick={() => goToProfile(resultado.id)}>
+                                <div>{resultado.nombre} {resultado.apellido}</div>
+                                <div>
+                                    <Rating Rating maxRating={5} initialRating={resultado.suma_calificaciones / resultado.cantidad_calificaciones}></Rating>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                }
                 <button className="navbar-toggler" type="button" onClick={openNavBar}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
