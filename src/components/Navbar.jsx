@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from './../assets/images/logo.png';
 
 import './../styles/components/navbar.css';
+import { googleLogout } from '@react-oauth/google';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -19,6 +20,19 @@ function Navbar() {
 
     const closeSession = () => {
         localStorage.removeItem("user");
+        try{
+            googleLogout();
+        }catch(error){
+            
+        }
+        try {
+            window.FB.logout(function(response) {
+                console.log("Sesión de Facebook cerrada");
+            }, {force: true});
+        } catch(error) {
+            console.error("Error al cerrar la sesión de Facebook:", error);
+        }
+        
     }
 
     const validateSession = () => {
