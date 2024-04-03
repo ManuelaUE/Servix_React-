@@ -42,13 +42,22 @@ function PerfilOfertante() {
 
   const uploadSelphie = (event) => {
     const file = event.target.files[0];
-    
+
     if (file) {
       setFoto(file);
       const url = URL.createObjectURL(file);
       setSelphieUrl(url);
     }
   };
+
+  function changeRol() {
+    const verify = window.confirm("¿Estás seguro de cambiar a ofertante? No podrás cambiar nuevamente a solicitante");
+
+    if (verify) {
+        ("#makeMeOffer").css("display", "none");
+        ("#informationOffer").css("display", "block");
+    }
+}
 
   return (
     <>
@@ -62,7 +71,7 @@ function PerfilOfertante() {
 
         <button onClick={openImage}>Subir Foto</button>
 
-        <input type="file" id="upload-img" onChange={uploadSelphie}  hidden/>
+        <input type="file" id="upload-img" onChange={uploadSelphie} hidden />
       </div>
 
       <form className="mb-5" style={{ padding: "3em" }}>
@@ -88,6 +97,10 @@ function PerfilOfertante() {
               Guardar
             </button>
           </div>
+
+          <div class="col-sm-offset-2 col-sm-10 d-flex justify-content-center ">
+              <button className="btn btn-secondary" onclick= {changeRol}> Hacerme ofertante </button>
+            </div>
         </div>
       </form>
       <Footer />
