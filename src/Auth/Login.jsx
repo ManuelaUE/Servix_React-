@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toastr from "toastr";
 
+import { useGoogleLogin } from "@react-oauth/google";
+import { LoginSocialFacebook } from "reactjs-social-login";
 import Facebook from "./../assets/images/facebook.png";
 import Google from "./../assets/images/google.png";
 import Logo from "./../assets/images/logo.png";
@@ -48,12 +50,21 @@ function Login() {
         toastr.error(err.response.data.error);
       });
   };
+  // Remove the unused variable 'responseFacebook'
+
+  const login = useGoogleLogin({
+    onSuccess: (credentialResponse) => {
+      toastr.success("Bienvenido");
+      localStorage.setItem("user", JSON.stringify(credentialResponse.data));
+      navigate("/home");
+    },
+    onError: () => {
+      toastr.error("error al inicar sesion");
+    },
+  });
 
   return (
-    <ContainerAuth
-      image= {Logo}
-      title="Iniciar Sesion">
-   
+    <ContainerAuth image={Logo} title="Iniciar Sesion">
       <form>
         <div className="form-outline form-white mb-4 mt-5">
           <input
@@ -83,22 +94,35 @@ function Login() {
           className="btn btn-outline-primary btn-lg px-5 mt-3"
           onClick={handleSubmit}
           type="submit"
-        > Ingresar </button>
+        >
+          {" "}
+          Ingresar{" "}
+        </button>
 
         <div className="d-flex justify-content-center text-center mt-5 pt-1">
-          <a href="https://www.facebook.com/" className="text-dark">
-            <div className="icon">
-              <img src={Facebook} alt="" />
-            </div>
-          </a>
-          <a
-            href="https://www.google.com/intl/es-419/gmail/about/"
-            className="text-dark"
+          <LoginSocialFacebook
+            appId="419609834082548"
+            onResolve={(response) => {
+              toastr.success("Bienvenido");
+              localStorage.setItem("user", JSON.stringify(response.data));
+              navigate("/home");
+            }}
+            onReject={(error) => {
+              toastr.error("Error al iniciar seción");
+            }}
           >
-            <div className="icon">
-              <img src={Google} alt="" />
+            <div className="">
+              <button className="icon unstyle ">
+                <img src={Facebook} alt="" />
+              </button>
             </div>
-          </a>
+          </LoginSocialFacebook>
+
+          <div className="" onClick={() => login()}>
+            <button className="icon unstyle ">
+              <img src={Google} alt="" />
+            </button>
+          </div>
         </div>
 
         <div className="mt-5">
